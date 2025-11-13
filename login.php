@@ -2,8 +2,8 @@
 session_start();
 require_once "includes/config.php";
 
-if(!isset($_SESSION['admin_logged_in'])) {
-    header("Location: .php");
+if(isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
+    header("Location: index.php");
     exit;
 }
 
